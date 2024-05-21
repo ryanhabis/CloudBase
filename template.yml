@@ -1,0 +1,64 @@
+Resources:
+
+  MenuBucket:
+    Type: AWS::S3::Bucket
+  
+  FleetQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: fleet
+
+  AuditTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: audit
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        -
+          AttributeName: order_id
+          AttributeType: S
+      KeySchema:
+        -
+          AttributeName: order_id # should be same as abov
+          KeyType: HASH
+  
+  LambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      RoleName: orderhandler-ex-role
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action:
+            - sts:AssumeRole
+            Effect: Allow
+            Principal:
+              Service:
+              - lambda.amazonaws.com
+        Version: 2012-10-17
+      ManagedPolicyArns:
+        - arn:aws:iam::aws:policy/AWSLambdaExecute
+        - arn:aws:iam::aws:policy/AmazonSQSFullAccess
+        - arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess
+        - arn:aws:iam::aws:policy/AWSCloudFormationFullAccess
+      Path: /          
+
+          
+Outputs:
+  fleetbucketname:
+    Value: !Ref MenuBucket
+  
+  fleeturl:
+    Value: !Ref FleetQueue
+
+  fleetarn:
+    Value: !GetAtt FleetQueue.Arn
+
+  audittablename:
+    Value: !Ref AuditTable
+    
+  audittablearn:
+    Value: !GetAtt AuditTable.Arn 
+
+  rolearn:
+    Value: !GetAtt LambdaRole.Arn
+    

@@ -1,0 +1,7 @@
+System description:
+
+Creates a fleet of the irish army air core aircrafts and all navy ships.
+
+View the status of the fleet.
+
+Deletes the fleet.
