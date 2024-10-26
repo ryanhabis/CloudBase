@@ -1,101 +1,71 @@
-# Cloud technologies CA1
 
-**Due date:** as displayed on Moodle
+# Cloud Technologies CA1 - My Personal Cloud Journey 🌥️
 
-**Contribution to module mark:** 30%
+Welcome to my **Cloud CA1 Project**! Here, I aimed to build a foundational cloud system using various PaaS and IaaS components, enhancing my skills and understanding of cloud infrastructure. This project combines essential cloud tools and practices to create a functional and efficient cloud-based solution.
 
+## 🚀 Project Overview
 
-## Overview
+This project explores cloud architecture fundamentals by creating a system via [your cloud platform, e.g., AWS CloudFormation]. It showcases skills like managing cloud resources, implementing Lambda functions, and ensuring secure roles and permissions. Each step involved was a new challenge, helping me solidify my knowledge in cloud computing.
 
-In this CA you will construct a basic cloud system composed of PaaS (and/or IaaS) components. 
+## 📂 Project Structure
 
+This project includes several key components to meet its core objectives:
 
-## Before starting
+1. **System Description**:
+   - A straightforward description of the system’s purpose and architecture, provided in `description.txt`.
 
-You will be able to assemble and re-mix parts of this CA from files in the module and elsewhere online (e.g. Cloud Foundations content, this module's content, online, discussion boards, GitHub etc).
-Any items imported must be acknowledged directly as comments in the appropriate source file(s). 
+2. **CloudFormation Resources**:
+   - Infrastructure defined in CloudFormation templates for streamlined deployment. Resources like VPCs, S3 buckets, and Lambda setups are orchestrated here.
 
-Generative artificial intelligence (AI) tools cannot be used in this assessment task. In this assessment, you must not use generative artificial intelligence (AI) (ChatGPT, ChatSonic, Bing Chat, Lex, DALL-E 2, or other tools) to generate any materials or content in relation to the assessment task.
-The [DkIT Academic Integrity Policy and Procedures](https://www.dkit.ie/about-dkit/policies-and-guidelines/academic-policies.html) states the following:
-"Using generative artificial intelligence tools (e.g. ChatGPT) in an assessment unless explicitly permitted to do so and with proper acknowledgement, is a form of plagiarism".
+3. **Lambda Function**:
+   - This project includes a serverless function managed via CloudFormation. It’s stored in an S3 bucket or configured inline, designed to be versatile and easily scalable.
 
+4. **Roles and Permissions**:
+   - Secure and well-defined roles and permissions, set up in CloudFormation, control access across different components.
 
-## Git repository
+5. **Scripts for System Management**:
+   - **Setup Script (`setup.ps1`)**: This script creates CloudFormation stacks, sets up all necessary resources, and prevents accidental re-runs.
+   - **Status Script (`status.ps1`)**: This script provides quick, essential information like IP addresses and resource names for system operation.
+   - **Teardown Script (`teardown.ps1`)**: This script cleanly removes all resources by deleting the relevant CloudFormation stacks.
 
-You will maintain and submit your work using Git via the DkIT Student GitLab system.
-Your repository **MUST** be called `cloud_ca1`.
+6. **Source Control**:
+   - I maintained thorough version control, following good Git practices with multiple, detailed commits.
 
-So that I can download your code, you must add `grantp` as a Developer on your repository.
-You can do this at any time before the deadline, but I recommend you do this immediately.
+## 🛠️ Technologies Used
 
+- **AWS CloudFormation**: To provision resources in a reliable, scalable way.
+- **AWS Lambda**: For executing serverless functions.
+- **PowerShell Scripts**: For efficient setup, status monitoring, and teardown of the cloud environment.
+- **Git**: For version control and project tracking.
 
-## Components
+## 🌟 Key Lessons & Experiences
 
-### System description (10%)
+Through this project, I aimed to:
 
-Provide a brief description of the system you are creating in a plain text file called `description.txt`. 
+- Master foundational cloud concepts and PaaS/IaaS tools.
+- Implement effective serverless functions and access control measures.
+- Gain hands-on experience in designing cloud-native applications.
 
-### CloudFormation resources (20%)
+This journey has been a great stepping stone in my cloud development skills, setting the foundation for more advanced projects.
 
-This mark does not encompass lambda function and roles and permissions which are separately examined below. 
+## ⚙️ Getting Started
 
+To set up and explore this project, you’ll need:
+1. A cloud account with necessary permissions (e.g., AWS).
+2. PowerShell (for running setup scripts).
+3. Clone the repository:
+   ```bash
+   git clone https://github.com/ryanhabis/cloud_ca1.git
+   ```
 
+4. Run `setup.ps1` to deploy the resources, and `status.ps1` to monitor them.
 
-### Lambda function (20%)
+5. Use `teardown.ps1` when ready to remove all deployed resources.
 
-You must have at least 1 Lambda function.
+## 💡 What’s Next?
 
-It should be principally set up from CloudFormation with code either in an S3 bucket OR inline.
+This project has laid the groundwork for further cloud exploration. Future improvements might include:
 
-
-
-### Roles and permissions (10%)
-
-Roles and Permissions should be set up in CloudFormation.
-
-Marks will be given for specificity of actions, resources and who is allowed to undertake them. 
-
-
-### Setup script (10%)
-
-Your setup script must be named `setup.ps1`.
-It should set up all of the resources mainly by creating CloudFormation stack(s), and should wait for resources to complete creating before completing.
-It should prevent re-running the setup script. 
-
-
-### Status script (10%)
-
-Your status script must be named `status.ps1`.
-It should present information necessary for system operation (e.g. IP addresses, Queue URLs, Role names, Function names, Bucket names etc) taken from CloudFormation outputs. 
-
-
-### Teardown script (10%)
-
-Your teardown script must be named `teardown.ps1`.
-It should remove ALL resources created by deleting relevant CloudFormation stack(s), and should wait for resources to complete deleting before completing. 
-
-## Source control (10%)
-
-You are to maintain your work in Source Control.
-This gradable item covers the use of git including multiple commits and quality of commit messages. 
-
-
-## Submission
-
-Repositories will be downloaded after the deadline has passed.
-
-Repositories that are incorrectly named **will not** be picked up by my download script.
-These will be treated as a non-submission and **will receive zero**.
-Therefore, please name your repository correctly.
-
-
-## Feedback
-
-Summary feedback and grade breakdown will be provided via Moodle.
-
-Detail verbal feedback is available on request following the release of marks. 
-
-
-## Q&A
-
-Q&A items will be put here.
+- Adding more complex Lambda workflows.
+- Introducing automated logging and monitoring tools.
+- Expanding permissions configurations to handle advanced scenarios.
