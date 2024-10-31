@@ -1,7 +1,7 @@
 
-# Cloud Technologies CA1 - My Personal Cloud Journey 🌥️
+# Cloud Technologies - My Personal Cloud Journey 🌥️
 
-Welcome to my **Cloud CA1 Project**! Here, I aimed to build a foundational cloud system using various PaaS and IaaS components, enhancing my skills and understanding of cloud infrastructure. This project combines essential cloud tools and practices to create a functional and efficient cloud-based solution.
+Welcome to my **Cloud Project**! Here, I aimed to build a foundational cloud system using various PaaS and IaaS components, enhancing my skills and understanding of cloud infrastructure. This project combines essential cloud tools and practices to create a functional and efficient cloud-based solution.
 
 ## 🚀 Project Overview
 
